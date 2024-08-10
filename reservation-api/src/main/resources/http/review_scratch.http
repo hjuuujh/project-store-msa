@@ -1,0 +1,41 @@
+### create review success
+POST http://localhost:8080/api/reservation/customer/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMzE5MjI1NCwiZXhwIjoxNzIzMjc4NjU0fQ.LRysassdTzFDEDniyWD4z5oD-7e6PAjR7U0MJ3yksQk1FVwAIDjaU_VBG_VVcWdIoL0z0PRNjUBUaM2hvnSTNQ
+
+{
+  "reservationId": "1",
+  "rating": 4.3,
+  "comment": "후기를 남겨보겠습니다?"
+}
+
+### update review success
+PATCH http://localhost:8080/api/reservation/customer/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMzE5MjI1NCwiZXhwIjoxNzIzMjc4NjU0fQ.LRysassdTzFDEDniyWD4z5oD-7e6PAjR7U0MJ3yksQk1FVwAIDjaU_VBG_VVcWdIoL0z0PRNjUBUaM2hvnSTNQ
+
+{
+  "id": "1",
+  "rating": 4.8,
+  "comment": "후기를 수정해보겠습니다.?"
+}
+
+### delete review by customer success
+DELETE http://localhost:8080/api/reservation/customer/review?id=4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMzEwMDU5NiwiZXhwIjoxNzIzMTg2OTk2fQ.5OpdnuNb8C3oiXVGmLX7Fb0nbEhNqSeMHpQkPnJFdaRqcJ1EPR9-WENDREO5MI1i_ANf3wsXsfG168xg7J8SBA
+
+### delete review by partner success
+DELETE http://localhost:8080/api/reservation/partner/review?id=4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFQTZkVGZtZjRLNEkrSVYxMERLTWVnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyMzI0NzU3LCJleHAiOjE3MjI0MTExNTd9.sp_oP7K9KszvRBqoC3VkR6plKAbETpBokY3yOCVzykcetA3NvFpvUgz9qxeYxnTZLm9HgNPxOQm02nMQ1Pd7DA
+
+### search review by customer
+GET http://localhost:8080/api/reservation/customer/review/search?page=0&size=5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMzE5MjI1NCwiZXhwIjoxNzIzMjc4NjU0fQ.LRysassdTzFDEDniyWD4z5oD-7e6PAjR7U0MJ3yksQk1FVwAIDjaU_VBG_VVcWdIoL0z0PRNjUBUaM2hvnSTNQ
+
+### search review by partner and store
+GET http://localhost:8080/api/api/reservation/partner/review/search?storeId=1&page=0&size=5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w

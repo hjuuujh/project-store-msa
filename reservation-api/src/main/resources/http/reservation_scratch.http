@@ -1,0 +1,42 @@
+### make reservation success
+POST http://localhost:8080/api/reservation/customer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMzE5MjI1NCwiZXhwIjoxNzIzMjc4NjU0fQ.LRysassdTzFDEDniyWD4z5oD-7e6PAjR7U0MJ3yksQk1FVwAIDjaU_VBG_VVcWdIoL0z0PRNjUBUaM2hvnSTNQ
+
+{
+  "reservationInfoId": "1",
+  "reservationDate": "2022-01-04",
+  "phone": "01000000000",
+  "headCount": "3"
+}
+
+
+### make reservation status approved
+PATCH http://localhost:8080/api/reservation/partner
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIzMDk3MTA3LCJleHAiOjE3MjMxODM1MDd9.aFhGdAwzcnzp4FDIzzvvpmbrs8CY4FB0_CBFikEPqMkEiAlblgYVIpoQH_f4_StvvcNvepDOl82usQs_qKyPNA
+
+{
+  "reservationId": "1",
+  "status": "approved"
+}
+
+### make reservation status rejected
+PATCH http://localhost:8080/api/reservation/partner
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIzMDk3MTA3LCJleHAiOjE3MjMxODM1MDd9.aFhGdAwzcnzp4FDIzzvvpmbrs8CY4FB0_CBFikEPqMkEiAlblgYVIpoQH_f4_StvvcNvepDOl82usQs_qKyPNA
+
+{
+  "reservationId": "3",
+  "status": "rejected"
+}
+
+### delete reservation
+DELETE http://localhost:8080/api/reservation/customer/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMzEwMDU5NiwiZXhwIjoxNzIzMTg2OTk2fQ.5OpdnuNb8C3oiXVGmLX7Fb0nbEhNqSeMHpQkPnJFdaRqcJ1EPR9-WENDREO5MI1i_ANf3wsXsfG168xg7J8SBA
+
+### visit store
+PATCH http://localhost:8080/api/reservation/customer/visit?id=3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMzEwMDU5NiwiZXhwIjoxNzIzMTg2OTk2fQ.5OpdnuNb8C3oiXVGmLX7Fb0nbEhNqSeMHpQkPnJFdaRqcJ1EPR9-WENDREO5MI1i_ANf3wsXsfG168xg7J8SBA

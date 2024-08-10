@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: store-api
+    profiles:
+      active: local
+  cloud:
+    config:
+      label: master
+      profile: local
+      uri: http://localhost:8888
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  eureka: # eureka client 등록
+    instance:
+      prefer-ip-address: true # 컨테이너 기반 배포면 임의의 호스트이름이 부여되므로 true이용해 ip주소로 등록해 찾도록
+    client:
+      register-with-eureka: true
+      fetch-registry: true
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8091
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+external-api:
+#  member:
+#    url: http://localhost:8090/api/member
+  member:
+    url: http://member-api:8090/api/member
+#  store:
+#    url: http://localhost:8091/api/store
+#  store:
+#    url: http://store-api:8091/api/store
+#  reservation:
+#    url: http://localhost:8092/api/reservation
+  reservation:
+    url: http://reservation-api:8092/api/reservation
+

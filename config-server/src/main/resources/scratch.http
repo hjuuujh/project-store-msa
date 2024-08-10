@@ -1,0 +1,23 @@
+### get config
+GET http://localhost:8888/member-api/local
+
+### get config
+GET http://localhost:8888/store-api/local
+
+### get encrypt
+GET http://localhost:8888/actuator/health
+
+### encrypt
+POST http://localhost:8888/encrypt
+Content-Type: application/x-www-form-urlencoded
+
+1234
+
+### decrypt
+POST localhost:8888/decrypt
+Content-Type: application/x-www-form-urlencoded
+
+AQAijfMnpxnV7cROWuYAvj6lj9HvZrAEiT/yH9q0azW7cExohdqSEviY5zv0K1pdHH8uPY4PaZBRd8OUPJJDW6XsR4MIPndzSCeqAGzYdVut3DW/T/yLDcoxwwXGNha9INM86l34UWW9fGUpFUHbPYdE7uqjX7R1bmboYIxr3uI38yjRd0H3BLsbXzwsEVyKC3ulFqwWUKhWcnJRg8ayCcRFMCdXVbf2sV1ATL73hsfpFtXrjjtHu9i0xo6vdsmiKMOPrEJSRekEPxNB++4dbDZN9/PbhlzP+GdHb2VeUINMk/27biA8myYcBo00RwACoYgi02oMDYPT5GBeKSZTcN8aXFoH4lDE1kTqd0qsh3TJcgfRZzRXAzR1PT23qosDd2M=
+
+###
+

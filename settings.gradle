@@ -1,0 +1,8 @@
+rootProject.name = 'store-msa'
+include 'member-api'
+include 'store-api'
+include 'gateway'
+include 'reservation-api'
+include 'discovery-server'
+include 'config-server'
+

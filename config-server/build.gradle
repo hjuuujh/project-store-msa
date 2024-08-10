@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.zerobase'
+version = '0.0.1-SNAPSHOT'
+
+
+ext {
+    springCloudSleuthOtelVersion = "1.0.0-M1"
+    releaseTrainVersion = "2021.0.1"
+}
+
+apply plugin: "io.spring.dependency-management"
+
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.spring.io/snapshot"
+    }
+    maven {
+        url "https://repo.spring.io/milestone"
+    }
+    maven {
+        url "https://repo.spring.io/release"
+    }
+}
+// MSA 용
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${releaseTrainVersion}"
+        mavenBom "org.springframework.cloud:spring-cloud-sleuth-otel-dependencies:${springCloudSleuthOtelVersion}"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-config-server'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,32 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discovery-server
+  cloud:
+    config:
+      enabled: false # confing 사용 안함
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    register-with-eureka: false # 자기자신 등록 필요없음
+    fetch-registry: false # 자기자신 정보 캐싱할 필요 없음
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ # Eureka API 요청시 해당 URL로 요청
+
+  server:
+    # 서버가 요청을 받기 전 대기할 초기 시간(ms)
+    # default 5분 : 실무에서는 보통 모든 서비스가 등록 되길 기다리기 위해 5분 후 정보를 공유
+    # 개인 프로젝트인 만큼 빠른 등록을 위해 5ms로 설정
+    wait-time-in-ms-when-sync-empty: 5
+
+management: # actuator 관련설정, actuartor의 어떤 API 사용할지 설정
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 모든 API 사용
+
+

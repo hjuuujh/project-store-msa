@@ -1,0 +1,5 @@
+encryptionKey.jks
+trust_key.cer
+
+build/
+out/
