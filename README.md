@@ -256,7 +256,7 @@
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
 |매장정보 없는 경우| BAD_REQUEST | NOT_FOUND_STORE |"매장명이 존재하지 않습니다."|
-### Store API
+### Reservation API
 1. 매장 예약 : POST - /api/reservation/customer
 - 헤더 : token
 - 파라미터 : 예약상세정보id, 예약인원, 신청핸드폰번호, 예약날짜
